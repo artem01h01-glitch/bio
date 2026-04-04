@@ -252,6 +252,187 @@ ul {
     transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* ========== КАРТКИ "ЗАРАЗ ВИВЧАЮ" ========== */
+.learning {
+    margin: 35px 0;
+}
+
+.learning-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.learning-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    background: rgba(0, 119, 182, 0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 119, 182, 0.1);
+    transition: all 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(15px);
+    cursor: default;
+}
+
+.learning-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.learning-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.15);
+    border-color: rgba(0, 119, 182, 0.3);
+}
+
+.learning-icon {
+    font-size: 28px;
+}
+
+.learning-text {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    transition: color 0.5s ease;
+}
+
+/* ========== ЦІКАВІ ФАКТИ ========== */
+.fun-facts {
+    margin: 35px 0;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.fact-card {
+    padding: 20px 15px;
+    background: rgba(0, 119, 182, 0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 119, 182, 0.08);
+    transition: all 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.fact-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.12);
+}
+
+.fact-emoji {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.fact-card p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+    transition: color 0.5s ease;
+}
+
+/* ========== СОЦМЕРЕЖІ ========== */
+.socials {
+    margin: 35px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn.github {
+    background: #24292e;
+    color: white;
+    box-shadow: 0 4px 15px rgba(36, 41, 46, 0.3);
+}
+
+.social-btn.github:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(36, 41, 46, 0.4);
+}
+
+.social-btn.email-btn {
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+}
+
+.social-btn.email-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+}
+
+/* ========== КОНФЕТТІ ========== */
+.confetti {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: confettiFall 0.8s ease forwards;
+}
+
+@keyframes confettiFall {
+    from {
+        opacity: 1;
+        top: 50%;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        top: -30px;
+        transform: scale(0);
+    }
+}
+
+/* ========== SPIN EASTER EGG ========== */
+@keyframes spin360 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ========== ЛІЧИЛЬНИК ВІДВІДУВАНЬ ========== */
+.visit-counter {
+    margin: 25px 0 10px;
+    padding: 12px;
+    font-size: 14px;
+    color: #888;
+    border-radius: 12px;
+    background: rgba(0, 119, 182, 0.03);
+    transition: color 0.5s ease, background 0.5s ease;
+}
+
 /* ========== HIGHLIGHT ========== */
 .highlight {
     color: #0077b6;
@@ -467,6 +648,34 @@ body.dark .highlight {
     color: #64b5f6;
 }
 
+body.dark .learning-card {
+    background: rgba(100, 181, 246, 0.08);
+    border-color: rgba(100, 181, 246, 0.15);
+}
+
+body.dark .learning-text {
+    color: #ccc;
+}
+
+body.dark .fact-card {
+    background: rgba(100, 181, 246, 0.06);
+    border-color: rgba(100, 181, 246, 0.12);
+}
+
+body.dark .fact-card p {
+    color: #bbb;
+}
+
+body.dark .social-btn.github {
+    background: #1a1a3e;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .visit-counter {
+    color: #888;
+    background: rgba(100, 181, 246, 0.05);
+}
+
 /* ========== АДАПТИВ ========== */
 @media (max-width: 600px) {
     .container {
@@ -493,5 +702,15 @@ body.dark .highlight {
 
     .cursor-trail {
         display: none;
+    }
+
+    .learning-cards,
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
     }
 }
