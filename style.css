@@ -176,6 +176,73 @@ ul {
 .slide-up-item:nth-child(2) { transition-delay: 0.2s; }
 .slide-up-item:nth-child(3) { transition-delay: 0.3s; }
 
+/* ========== ІНФО КАРТКИ ========== */
+.info-cards {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.info-cards.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 16px;
+    background: rgba(0, 119, 182, 0.04);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 119, 182, 0.1);
+    transition: all 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.info-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 119, 182, 0.12);
+    border-color: rgba(0, 119, 182, 0.25);
+}
+
+.info-card-icon {
+    font-size: 36px;
+}
+
+.info-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-card-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.5s ease;
+}
+
+.info-card-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    transition: color 0.5s ease;
+}
+
 /* ========== ЛІЧИЛЬНИК ВІКУ ========== */
 .age-counter {
     margin: 30px 0;
@@ -422,17 +489,6 @@ ul {
     to { transform: rotate(360deg); }
 }
 
-/* ========== ЛІЧИЛЬНИК ВІДВІДУВАНЬ ========== */
-.visit-counter {
-    margin: 25px 0 10px;
-    padding: 12px;
-    font-size: 14px;
-    color: #888;
-    border-radius: 12px;
-    background: rgba(0, 119, 182, 0.03);
-    transition: color 0.5s ease, background 0.5s ease;
-}
-
 /* ========== HIGHLIGHT ========== */
 .highlight {
     color: #0077b6;
@@ -657,6 +713,24 @@ body.dark .learning-text {
     color: #ccc;
 }
 
+body.dark .info-card {
+    background: rgba(100, 181, 246, 0.06);
+    border-color: rgba(100, 181, 246, 0.12);
+}
+
+body.dark .info-card:hover {
+    border-color: rgba(100, 181, 246, 0.25);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.1);
+}
+
+body.dark .info-card-label {
+    color: #888;
+}
+
+body.dark .info-card-value {
+    color: #ccc;
+}
+
 body.dark .fact-card {
     background: rgba(100, 181, 246, 0.06);
     border-color: rgba(100, 181, 246, 0.12);
@@ -713,4 +787,13 @@ body.dark .visit-counter {
         flex-direction: column;
         align-items: center;
     }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
 }
+
+}
+
+}
+
